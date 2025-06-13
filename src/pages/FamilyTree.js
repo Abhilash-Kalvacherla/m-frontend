@@ -6,7 +6,7 @@ const FamilyTree = () => {
   return (
     <div className="tree-container">
       <h2 className="tree-title">Family Origin</h2>
-      <div className="parent hover-effect">Madhunamma & Ram</div>
+      <div className="parent hover-effect">Madhunamma & Ramayya</div>
       <div className="children">
         <div className="child hover-effect">Laxmi</div>
         <div className="child hover-effect">Sarojana</div>

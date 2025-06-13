@@ -1,98 +1,101 @@
-/* src/pages/Gallery.css */
-
 .gallery-container {
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
-  background: #f9fafb;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
   min-height: 100vh;
   text-align: center;
 }
 
 h2 {
   margin-bottom: 1rem;
-  color: #333;
+  color: #1e293b;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .upload-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-  background: #ffffff;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  width: 90%;
-  max-width: 400px;
-  margin-inline: auto;
+  gap: 0.75rem;
+  margin: 2rem auto;
+  background: linear-gradient(to top left, #e0f7fa, #e1bee7);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 95%;
+  max-width: 420px;
 }
 
 .upload-section input[type='text'],
 .upload-section input[type='file'] {
   width: 100%;
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  background: #f1f5f9;
 }
 
 .upload-section button {
-  background-color: #2563eb;
+  background-color: #6366f1;
   color: white;
   border: none;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .upload-section button:hover {
-  background-color: #1e40af;
+  background-color: #4338ca;
+  transform: scale(1.03);
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  padding-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
 }
 
 .gallery-card {
-  background-color: #fff;
-  padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to top right, #ffffff, #e0f2f1);
+  padding: 0.75rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 0.4rem;
-}
-
-.gallery-card p {
-  font-size: 0.85rem;
-  color: #555;
-  margin: 0;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
 }
 
 .download-btn {
   margin-top: 0.4rem;
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  background-color: #10b981;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background-color: #22c55e;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .download-btn:hover {
-  background-color: #059669;
+  background-color: #15803d;
+  transform: scale(1.05);
 }

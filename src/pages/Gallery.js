@@ -52,12 +52,7 @@ const Gallery = () => {
       <h2>Upload a Family Photo</h2>
 
       <div className="upload-section">
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={uploadedBy}
-          onChange={(e) => setUploadedBy(e.target.value)}
-        />
+        
         <input type="file" onChange={(e) => setSelectedFile(e.target.files[0])} />
         <button onClick={handleUpload} disabled={uploading}>
           {uploading ? 'Uploading...' : 'Upload'}
@@ -69,7 +64,7 @@ const Gallery = () => {
         {images.map((img) => (
           <div className="gallery-card" key={img._id}>
             <img src={img.url} alt="Family Upload" />
-            <p>Uploaded by: {img.uploadedBy}</p>
+          
             <a href={img.url} download target="_blank" rel="noopener noreferrer">
               <button className="download-btn">Download</button>
             </a>

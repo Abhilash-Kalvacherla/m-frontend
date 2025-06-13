@@ -7,7 +7,6 @@ import './Gallery.css';
 const Gallery = () => {
   const [images, setImages] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
-  const [uploadedBy, setUploadedBy] = useState('');
   const [uploading, setUploading] = useState(false);
 
   const fetchImages = async () => {
@@ -24,21 +23,19 @@ const Gallery = () => {
   }, []);
 
   const handleUpload = async () => {
-    if (!selectedFile || !uploadedBy) {
-      alert('Enter your name and select an image.');
+    if (!selectedFile) {
+      alert('Please select an image.');
       return;
     }
 
     const formData = new FormData();
     formData.append('image', selectedFile);
-    formData.append('uploadedBy', uploadedBy);
 
     try {
       setUploading(true);
       await axios.post(`${API_BASE_URL}/api/gallery/upload`, formData);
       setUploading(false);
       setSelectedFile(null);
-      setUploadedBy('');
       fetchImages();
     } catch (err) {
       console.error('Upload failed:', err);
@@ -52,7 +49,6 @@ const Gallery = () => {
       <h2>Upload a Family Photo</h2>
 
       <div className="upload-section">
-        
         <input type="file" onChange={(e) => setSelectedFile(e.target.files[0])} />
         <button onClick={handleUpload} disabled={uploading}>
           {uploading ? 'Uploading...' : 'Upload'}
@@ -64,7 +60,6 @@ const Gallery = () => {
         {images.map((img) => (
           <div className="gallery-card" key={img._id}>
             <img src={img.url} alt="Family Upload" />
-          
             <a href={img.url} download target="_blank" rel="noopener noreferrer">
               <button className="download-btn">Download</button>
             </a>

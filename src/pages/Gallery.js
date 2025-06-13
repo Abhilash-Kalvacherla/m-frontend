@@ -1,6 +1,7 @@
 // src/pages/Gallery.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../apiBase'; // 🌐 Import the backend base URL
 import './Gallery.css';
 
 const Gallery = () => {
@@ -11,7 +12,7 @@ const Gallery = () => {
 
   const fetchImages = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/gallery');
+      const res = await axios.get(`${API_BASE_URL}/api/gallery`);
       setImages(res.data);
     } catch (err) {
       console.error('Error fetching images:', err);
@@ -34,7 +35,7 @@ const Gallery = () => {
 
     try {
       setUploading(true);
-      await axios.post('http://localhost:5000/api/gallery/upload', formData);
+      await axios.post(`${API_BASE_URL}/api/gallery/upload`, formData);
       setUploading(false);
       setSelectedFile(null);
       setUploadedBy('');

@@ -1,6 +1,7 @@
 // src/pages/Events.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../apiBase'; // ✅ Import the base URL
 import './Events.css';
 
 const monthNames = [
@@ -14,7 +15,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/events');
+      const res = await axios.get(`${API_BASE_URL}/api/events`); // ✅ Updated
       setEvents(res.data);
     } catch (err) {
       console.error(err);
@@ -31,7 +32,7 @@ const Events = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:5000/api/events', formData);
+      await axios.post(`${API_BASE_URL}/api/events`, formData); // ✅ Updated
       setFormData({ name: '', date: '', type: '' });
       fetchEvents();
     } catch (err) {
